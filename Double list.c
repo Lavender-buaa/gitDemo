@@ -88,3 +88,24 @@ DouList *set_order_list()
     }
     return header;
 }
+
+void del_value(DouList *header, int data)
+{
+    int flag = 1;
+    DouList *p = header;
+    while (flag == 1)
+    {
+        flag = 0;
+        for (int i = 0; i < header->data; i++)
+        {
+            if (p->right->data == data)
+            {
+                p->right = p->right->right;
+                p->right->right->left = p;
+                header->data--;
+                flag = 1;
+            }
+            p = p->right;
+        }
+    }
+}
