@@ -69,3 +69,22 @@ void output(DouList *header)
     }
     printf("\n");
 }
+
+DouList *set_order_list()
+{
+    int array[20] = {0};
+    DouList *header = init_list(0);
+    printf("Please enter the number of data you want:");
+    int n;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &array[i]);
+    }
+    buuble_sort(array, n);
+    for (int i = 0; i < n; i++)
+    {
+        add(header, array[i]);
+    }
+    return header;
+}
