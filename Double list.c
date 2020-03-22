@@ -35,3 +35,16 @@ DouList *init_list(int n)
     header->data = n;
     return header;
 }
+
+void add(DouList *header, int data)
+{
+    DouList *p = (DouList *)malloc(sizeof(DouList));
+    p = header->left;
+    DouList *newNode = (DouList *)malloc(sizeof(DouList));
+    newNode->right = header;
+    newNode->left = p;
+    p->right = newNode;
+    header->left = newNode;
+    newNode->data = data;
+    header->data++;
+}
