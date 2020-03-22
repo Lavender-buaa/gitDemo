@@ -48,3 +48,24 @@ void add(DouList *header, int data)
     newNode->data = data;
     header->data++;
 }
+
+void output(DouList *header)
+{
+    printf("The length of double list is %d\n", header->data);
+    printf("The data are:\n");
+    DouList *p = header->right;
+    for (int i = 0; i < header->data * 2 + 1; i++)
+    {
+        printf("%-3d", p->data);
+        p = p->right;
+    }
+    printf("\n");
+
+    p = p->left;
+    for (int i = 0; i < header->data * 2 + 1; i++)
+    {
+        printf("%-3d", p->data);
+        p = p->left;
+    }
+    printf("\n");
+}
