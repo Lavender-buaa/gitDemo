@@ -109,3 +109,16 @@ void del_value(DouList *header, int data)
         }
     }
 }
+//Onethod 1th update 
+int isInList(DouList *header, int data)
+{
+    DouList *p = header->right;
+    for (int i = 0; i < header->data; i++)
+    {
+        if (p->data == data)
+            return 1;
+
+        p = p->right;
+    }
+    return 0;
+}
