@@ -156,3 +156,19 @@ void bubble_sort(int *array, int n)
         }
     }
 }
+//Onethod 4th update
+void display(int *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
+
+void swap(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
