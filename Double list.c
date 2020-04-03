@@ -137,3 +137,22 @@ void setify(DouList **header)
     }
     *header = newHeader;
 }
+//Onethod 3th update
+void bubble_sort(int *array, int n)
+{
+    int flag = 1;
+    while (flag)
+    {
+        flag = 0;
+        for (int i = 0; i < n - 1; i++)
+        {
+            if (array[i] > array[i + 1])
+            {
+                int tmp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = tmp;
+                flag = 1;
+            }
+        }
+    }
+}
