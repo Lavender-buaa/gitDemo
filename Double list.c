@@ -172,3 +172,27 @@ void swap(int &a, int &b)
     a = b;
     b = temp;
 }
+//Onethod 5th update
+int section(int *arr, int size, int pos)
+{
+    int min_index = pos, flag = 0;
+    for (int i = pos + 1; i < size; i++)
+    {
+        if (arr[i] < arr[min_index])
+        {
+            min_index = i;
+            flag = 1;
+        }
+    }
+    if (flag == 1)
+        swap(arr[pos], arr[min_index]);
+
+    return flag;
+}
+void Selection_sort(int *arr, int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        section(arr, size, i);
+    }
+}
