@@ -122,3 +122,18 @@ int isInList(DouList *header, int data)
     }
     return 0;
 }
+//Onethod 2th update
+void setify(DouList **header)
+{
+    DouList *newHeader = init_list(0);
+    DouList *p = (*header)->right;
+    for (int i = 0; i < (*header)->data; i++)
+    {
+        if (!isInList(newHeader, p->data))
+        {
+            add(newHeader, p->data);
+        }
+        p = p->right;
+    }
+    *header = newHeader;
+}
